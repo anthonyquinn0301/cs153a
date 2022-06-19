@@ -42,7 +42,7 @@ const GitHubDemo = () => {
                 }}
             />
 
-            {/* <Text>{JSON.stringify(data)}</Text> */}
+            {<Text>{JSON.stringify(data)}</Text> }
 
             {isLoading ? <ActivityIndicator /> : (
                 <FlatList
