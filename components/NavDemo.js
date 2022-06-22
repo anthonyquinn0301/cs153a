@@ -25,7 +25,9 @@ const MyStack = () => {
 
 
 
-        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen 
+             name="Profile" 
+             component={ProfileScreen} />
 
 
 

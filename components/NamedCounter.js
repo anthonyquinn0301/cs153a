@@ -22,16 +22,6 @@ const NamedCounter = ({ label, value, updateTotal }) => {
             }
           }
         />
-                <Button
-          title={label}
-          color="red"
-          onPress={() => {
-            setCount((count - value));
-            updateTotal(value);
-            setCoins(coins - 1);
-            }
-          }
-        />
       </View>
     </View>
   );
