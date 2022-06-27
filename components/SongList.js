@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Button, Text, TextInput, View } from 'react-native';
-
+import {useValue} from './ValueStorageContext';
 
 const SongList = () => {
   const [song, setSong] = useState("");
-  
-
+  const {currentValue,setCurrentValue} = useValue();
 
   return (
     <View style={{padding: 10}}>
@@ -15,18 +14,26 @@ const SongList = () => {
       <Text>
         Enter a song name in the box below to add a song to the list.
       </Text>
+      
       <TextInput
         placeholder="Enter song name"
         onChangeText={newText => 
              setSong(newText)}
-        defaultValue={song}
+      
       />
-
-      <Text>
-        {song} 
-      </Text>
+               
+               <Button 
+               title="save song"
+               onPress = {() => 
+                setCurrentValue({song:song})
+              }
+               />         
+       
+       
     </View>
+    
   );
 }
+
 
 export default SongList;

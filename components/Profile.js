@@ -3,7 +3,7 @@
 */
 import React,{useState} from 'react';
 import {View,Text,TextInput,Button} from 'react-native';
-import {useValue} from './ValueContext';
+import {useValue} from './ValueStorageContext';
 
 const Profile = () => {
     const {currentValue,setCurrentValue} = useValue();

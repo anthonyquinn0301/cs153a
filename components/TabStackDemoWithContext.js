@@ -1,9 +1,9 @@
 import React from "react";
-import ValueProvider from './ValueContext';
+import ValueProvider from './ValueStorageContext';
 import TabStackDemo from './TabStackDemo'
 
 const TabStackDemoWithContext = () => {
-  const data = {name:"anon", email:"anon@anon.com"}
+  const data = {name:"anon", email:"anon@anon.com", song:""}
 
   return (
     <ValueProvider value={data}>
