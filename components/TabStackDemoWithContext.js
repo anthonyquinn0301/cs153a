@@ -2,7 +2,7 @@ import React from "react";
 import ValueProvider from './ValueContext';
 import TabStackDemo from './TabStackDemo'
 
-const App = () => {
+const TabStackDemoWithContext = () => {
   const data = {name:"anon", email:"anon@anon.com"}
 
   return (
@@ -12,4 +12,4 @@ const App = () => {
   )
 }
 
-export default App;
+export default TabStackDemoWithContext;
