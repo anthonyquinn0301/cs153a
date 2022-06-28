@@ -6,7 +6,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const ValueContext = createContext(null)
 
-const ValueProvider = ({value, children}) => {
+const ValueProvider = ({value, tag, children}) => {
   const [currentValue,setCurrentValue] = useState(value);
 
   useEffect(() => {getData();},[]) // init currentValue with AsyncStorage
@@ -14,7 +14,7 @@ const ValueProvider = ({value, children}) => {
   const getData = async () => 
     {
       try {
-        const jsonValue = await AsyncStorage.getItem('@async')
+        const jsonValue = await AsyncStorage.getItem(tag)
         let data = null
         if (jsonValue!=null) {
           data = JSON.parse(jsonValue);
@@ -32,7 +32,7 @@ const ValueProvider = ({value, children}) => {
       try {
         console.log('in storeData');
         setCurrentValue(value);
-        await AsyncStorage.setItem('@async', JSON.stringify(value));
+        await AsyncStorage.setItem(tag, JSON.stringify(value));
       } catch (e) {
         console.dir(e)
       }

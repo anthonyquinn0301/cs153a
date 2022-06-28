@@ -4,7 +4,7 @@ import React from "react";
 import ValueProvider from './ValueStorageContext';
 import AsyncDemo from './AsyncDemo';
 
-const App = () => {
+const AsyncContextDemo = () => {
  
 
   let data = {username:'anon0'};
@@ -16,4 +16,4 @@ const App = () => {
   )
 }
 
-export default App;
+export default AsyncContextDemo;

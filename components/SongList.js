@@ -3,8 +3,9 @@ import { Button, Text, TextInput, View } from 'react-native';
 import {useValue} from './ValueStorageContext';
 
 const SongList = () => {
-  const [song, setSong] = useState("");
   const {currentValue,setCurrentValue} = useValue();
+  const [song, setSong] = useState("");
+  
 
   return (
     <View style={{padding: 10}}>
@@ -14,20 +15,25 @@ const SongList = () => {
       <Text>
         Enter a song name in the box below to add a song to the list.
       </Text>
+       <Text> {JSON.stringify(currentValue.log)}</Text> 
       
       <TextInput
         placeholder="Enter song name"
         onChangeText={newText => 
              setSong(newText)}
+        defaultValue ={song}
       
       />
                
-               <Button 
-               title="save song"
-               onPress = {() => 
-                setCurrentValue({song:song})
-              }
-               />         
+                <Button
+                title='add'
+                color = '#FAD4D4'
+                onPress = {() => {
+                    setCurrentValue({ 
+                        log:(currentValue.log || []).concat([song])})
+                    }}
+            />              
+              
        
        
     </View>

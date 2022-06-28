@@ -3,10 +3,10 @@ import ValueProvider from './ValueStorageContext';
 import TabStackDemo from './TabStackDemo'
 
 const TabStackDemoWithContext = () => {
-  const data = {name:"anon", email:"anon@anon.com", song:""}
+  const data = {name:"anon", email:"anon@anon.com", song:"", log:[]}
 
   return (
-    <ValueProvider value={data}>
+    <ValueProvider value={data} tag="@songs">
         <TabStackDemo />
     </ValueProvider>
   )
