@@ -39,6 +39,9 @@ function HomeScreen({ navigation }) {
             <Button 
       title="Go to Settings Page" 
       onPress = {() => navigation.navigate('Settings')}/>
+
+
+
     </View>
   );
 }
@@ -51,7 +54,7 @@ function SettingsScreen({ navigation }) {
         title="Go to SongList"
         onPress={() => navigation.navigate('SongList')}
       />
-            <Button 
+      <Button 
       title="Go to Profile Page" 
       onPress ={() =>
       navigation.navigate('Profile')} />
@@ -61,6 +64,8 @@ function SettingsScreen({ navigation }) {
       <Button 
       title="Go to Home Page" 
       onPress = {() => navigation.navigate('Home')}/>
+
+            
     </View>
   );
 }
@@ -78,8 +83,10 @@ function HomeStackScreen({navigation}) {
          />
        <HomeStack.Screen name="Developer" component={Developer} 
          />   
-               <HomeStack.Screen name="Settings" component={SettingsScreen} 
+        <HomeStack.Screen name="Settings" component={SettingsScreen} 
          />     
+  
+            
     </HomeStack.Navigator>
   );
 }
@@ -93,12 +100,13 @@ function SettingsStackScreen({navigation}) {
       />
       <SettingsStack.Screen name="SongList" component={SongListScreen} 
       />
-       <SettingsStack.Screen name="Home" component={HomeScreen} 
+      <SettingsStack.Screen name="Home" component={HomeScreen} 
       />     
-            <SettingsStack.Screen name="Profile" component={ProfileScreen} 
+      <SettingsStack.Screen name="Profile" component={ProfileScreen} 
          />
-       <SettingsStack.Screen name="Developer" component={Developer} 
+      <SettingsStack.Screen name="Developer" component={Developer} 
          />  
+
     </SettingsStack.Navigator>
   );
 }
@@ -128,7 +136,9 @@ export default function App({navigation}) {
                  <Tab.Screen name="SongList" component={SongListScreen} 
         options={{
             headerShown: false
-        }}/>       
+        }}/>  
+  
+                    
       </Tab.Navigator>
     </NavigationContainer>
   );
