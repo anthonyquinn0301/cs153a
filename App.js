@@ -5,7 +5,6 @@ import BMI from './components/bmi';
 import GitHubDemo from './components/GitHubDemo';
 import TabStackDemoWithContext from './components/TabStackDemoWithContext';
 import SongList from './components/SongList';
-import ContextSong from './components/ContextSong';
 import AsyncContextDemo from './components/AsyncContextDemo copy';
 export default function App() {
   return (
