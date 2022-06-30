@@ -7,7 +7,7 @@ import {useValue} from './ValueStorageContext';
 import Developer from './Developer';
 import SongList from './SongList';
 import ProfileScreen from './Profile';
-
+import ArtistInfo from './ArtistInfo';
 function SongListScreen({navigation}) {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -36,9 +36,12 @@ function HomeScreen({ navigation }) {
       <Button 
       title="Go to Developer Page" 
       onPress = {() => navigation.navigate('Developer')}/>
-            <Button 
+      <Button 
       title="Go to Settings Page" 
       onPress = {() => navigation.navigate('Settings')}/>
+      <Button 
+      title="Go to Artist Info Page" 
+      onPress = {() => navigation.navigate('ArtistInfo')}/>      
 
 
 
@@ -65,6 +68,9 @@ function SettingsScreen({ navigation }) {
       title="Go to Home Page" 
       onPress = {() => navigation.navigate('Home')}/>
 
+      <Button 
+      title="Go to ArtistInfo Page" 
+      onPress = {() => navigation.navigate('ArtistInfo')}/>
             
     </View>
   );
@@ -85,7 +91,8 @@ function HomeStackScreen({navigation}) {
          />   
         <HomeStack.Screen name="Settings" component={SettingsScreen} 
          />     
-  
+        <HomeStack.Screen name="ArtistInfo" component={ArtistInfo} 
+         />    
             
     </HomeStack.Navigator>
   );
@@ -106,7 +113,8 @@ function SettingsStackScreen({navigation}) {
          />
       <SettingsStack.Screen name="Developer" component={Developer} 
          />  
-
+      <SettingsStack.Screen name="ArtistInfo" component={ArtistInfo} 
+         />  
     </SettingsStack.Navigator>
   );
 }
@@ -133,11 +141,15 @@ export default function App({navigation}) {
         options={{
             headerShown: false
         }}/>
-                 <Tab.Screen name="SongList" component={SongListScreen} 
+        <Tab.Screen name="SongList" component={SongListScreen} 
         options={{
             headerShown: false
         }}/>  
   
+        <Tab.Screen name="ArtistInfo" component={ArtistInfo} 
+        options={{
+            headerShown: false
+        }}/>   
                     
       </Tab.Navigator>
     </NavigationContainer>

@@ -6,6 +6,7 @@ import GitHubDemo from './components/GitHubDemo';
 import TabStackDemoWithContext from './components/TabStackDemoWithContext';
 import SongList from './components/SongList';
 import AsyncContextDemo from './components/AsyncContextDemo copy';
+import ArtistInfo from './components/ArtistInfo';
 export default function App() {
   return (
     <TabStackDemoWithContext/>
