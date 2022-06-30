@@ -11,7 +11,7 @@ import ArtistInfo from './ArtistInfo';
 function SongListScreen({navigation}) {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>SongList!</Text>
+      <Text>Album List!</Text>
       <SongList />
     </View>
   );
@@ -24,9 +24,15 @@ function HomeScreen({ navigation }) {
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Home screen for {currentValue.name}  
              with email {currentValue.email}</Text>
-            
+             <View style={{flexDirection:'column',
+                                    padding:15,
+                                    margin:5,
+                                    borderWidth:2,
+                                    justifyContent:'space-evenly',
+                                    backgroundColor:'#fedcba',
+                                    flex:1}}>      
       <Button
-        title="Go to Songlist"
+        title="Go to Album list"
         onPress={() => navigation.navigate('SongList')}
       />
       <Button 
@@ -42,7 +48,7 @@ function HomeScreen({ navigation }) {
       <Button 
       title="Go to Artist Info Page" 
       onPress = {() => navigation.navigate('ArtistInfo')}/>      
-
+</View>
 
 
     </View>
@@ -53,8 +59,15 @@ function SettingsScreen({ navigation }) {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Settings screen</Text>
+      <View style={{flexDirection:'column',
+                                    padding:15,
+                                    margin:5,
+                                    borderWidth:2,
+                                    justifyContent:'space-evenly',
+                                    backgroundColor:'#fedcba',
+                                    flex:1}}>  
       <Button
-        title="Go to SongList"
+        title="Go to Album List"
         onPress={() => navigation.navigate('SongList')}
       />
       <Button 
@@ -69,9 +82,9 @@ function SettingsScreen({ navigation }) {
       onPress = {() => navigation.navigate('Home')}/>
 
       <Button 
-      title="Go to ArtistInfo Page" 
+      title="Go to Artist Info Page" 
       onPress = {() => navigation.navigate('ArtistInfo')}/>
-            
+    </View>        
     </View>
   );
 }

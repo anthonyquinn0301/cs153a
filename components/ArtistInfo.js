@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Text, View, TextInput, ActivityIndicator, FlatList, Button } from 'react-native';
-
-
+import { Text, View, TextInput, ActivityIndicator, FlatList, Button, SafeAreaView } from 'react-native';
+import ValueProvider from './ValueStorageContext';
+import { useValue } from './ValueStorageContext';
 const ArtistInfo = () => {
 
     const [data, setData] = useState([])
     const [isLoading, setLoading] = useState(true);
     const [temporaryArtistName, setTemporaryArtistname] = useState('');
-
     const [artistName, setArtistName] = useState('');
-
+    const {currentValue,setCurrentValue} = useValue();
     const getRepos = async () => {
         try {
             const response = await fetch('https://theaudiodb.com/api/v1/json/2/discography.php?s='+ artistName );
@@ -25,7 +24,7 @@ const ArtistInfo = () => {
     useEffect(() => { getRepos() }, [artistName])
 
     return (
-
+    <SafeAreaView>
         <View style={{ flex: 1, padding: 24 }}>
 
             <TextInput
@@ -42,20 +41,32 @@ const ArtistInfo = () => {
                 }}
             />
 
-             <Text>{JSON.stringify(data)}</Text> 
+             {/*<Text>{JSON.stringify(data)}</Text> */}
 
             {isLoading ? <ActivityIndicator /> : (
                 <FlatList
-                    data={data}
+                    data={data.album}
                     keyExtractor={({ id }, index) => id}
                     renderItem={({ item }) => (
-                        <Text>{item.strAlbum} {item.intYearReleased}</Text>
-                        
+                    <View style={{flexDirection:'row',
+                        padding:15,
+                        margin:5,
+                        borderWidth:2,
+                        justifyContent:'space-evenly',
+                        backgroundColor:'green',}}>
+                        <Button title = {item.strAlbum} 
+                                                onPress = {() => {
+                                                    setCurrentValue({ 
+                                                        log:(currentValue.log || []).concat([item.strAlbum])})
+                                                    }}
+                         />
+                    </View>
 
                     )}
                 />
             )}
         </View>
+        </SafeAreaView>
     )
 }
 

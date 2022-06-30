@@ -20,7 +20,7 @@ const ValueProvider = ({value, tag, children}) => {
           data = JSON.parse(jsonValue);
           setCurrentValue(data)
         } else {
-          setCurrentValue({username:'anon'})  
+          setCurrentValue(value)  
         }
       } catch(e) {
         console.dir(e)

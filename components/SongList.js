@@ -10,15 +10,15 @@ const SongList = () => {
   return (
     <View style={{padding: 10}}>
       <Text style={{fontSize:20,fontWeight:'bold'}}>
-         Song List:
+         Album List:
       </Text>
       <Text>
-        Enter a song name in the box below to add a song to the list.
+        Enter an album name in the box below to add favorite albums to the list.
       </Text>
        <Text> {JSON.stringify(currentValue.log)}</Text> 
       
       <TextInput
-        placeholder="Enter song name"
+        placeholder="Enter album name"
         onChangeText={newText => 
              setSong(newText)}
         defaultValue ={song}
