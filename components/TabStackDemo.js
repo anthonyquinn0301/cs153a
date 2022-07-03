@@ -21,8 +21,14 @@ function SongListScreen({navigation}) {
 function HomeScreen({ navigation }) {
     const {currentValue} = useValue();
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home screen for {currentValue.name}  
+    <View style={{flexDirection:'column',
+    padding:15,
+    margin:5,
+    borderWidth:2,
+    justifyContent:'space-evenly',
+    backgroundColor:'green',
+    flex:1}}>
+      <Text>Home screen for {currentValue.name}   
              with email {currentValue.email}</Text>
              <View style={{flexDirection:'column',
                                     padding:15,
@@ -42,13 +48,13 @@ function HomeScreen({ navigation }) {
       <Button 
       title="Go to Developer Page" 
       onPress = {() => navigation.navigate('Developer')}/>
-      <Button 
-      title="Go to Settings Page" 
-      onPress = {() => navigation.navigate('Settings')}/>
+
       <Button 
       title="Go to Artist Info Page" 
-      onPress = {() => navigation.navigate('ArtistInfo')}/>      
+      onPress = {() => navigation.navigate('ArtistInfo')}/>    
+
 </View>
+
 
 
     </View>
@@ -102,8 +108,7 @@ function HomeStackScreen({navigation}) {
          />
        <HomeStack.Screen name="Developer" component={Developer} 
          />   
-        <HomeStack.Screen name="Settings" component={SettingsScreen} 
-         />     
+    
         <HomeStack.Screen name="ArtistInfo" component={ArtistInfo} 
          />    
             
@@ -116,8 +121,7 @@ const SettingsStack = createNativeStackNavigator();
 function SettingsStackScreen({navigation}) {
   return (
     <SettingsStack.Navigator>
-      <SettingsStack.Screen name="Settings" component={SettingsScreen} 
-      />
+
       <SettingsStack.Screen name="SongList" component={SongListScreen} 
       />
       <SettingsStack.Screen name="Home" component={HomeScreen} 
@@ -142,10 +146,7 @@ export default function App({navigation}) {
           options={{
             headerShown: false
         }}/>
-        <Tab.Screen name="Settings" component={SettingsStackScreen} 
-        options={{
-            headerShown: false
-        }}/>
+
         <Tab.Screen name="Profile" component={ProfileScreen} 
         options={{
             headerShown: false

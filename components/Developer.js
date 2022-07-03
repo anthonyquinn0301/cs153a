@@ -44,8 +44,8 @@ const Developer = () => {
         fontSize:40,
         fontWeight:'bold',
         color:'yellow',
-      }} >Github API Username Search</Text>
-        <GitHubDemo />
+      }} >Thanks for scrolling!</Text>
+     
       </View>
     </View>
   );
