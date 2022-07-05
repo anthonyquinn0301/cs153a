@@ -29,7 +29,7 @@ const ArtistInfo = () => {
 
             <TextInput
                 style={{ height: 40 }}
-                placeholder="Enter artist name."
+                placeholder="Enter artist name to see their album list."
                 onChangeText={newText => setTemporaryArtistname(newText)}
                 defaultValue={temporaryArtistName}
             />
