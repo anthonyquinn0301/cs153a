@@ -8,6 +8,8 @@ import Developer from './Developer';
 import SongList from './SongList';
 import ProfileScreen from './Profile';
 import ArtistInfo from './ArtistInfo';
+import FeedbackFormScreen from './FeedbackForm';
+import FeedbackListScreen from './FeedbackList';
 function SongListScreen({navigation}) {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -53,6 +55,7 @@ function HomeScreen({ navigation }) {
       title="Go to Artist Info Page" 
       onPress = {() => navigation.navigate('ArtistInfo')}/>    
 
+  
 </View>
 
 
@@ -90,6 +93,8 @@ function SettingsScreen({ navigation }) {
       <Button 
       title="Go to Artist Info Page" 
       onPress = {() => navigation.navigate('ArtistInfo')}/>
+
+
     </View>        
     </View>
   );
@@ -110,8 +115,9 @@ function HomeStackScreen({navigation}) {
          />   
     
         <HomeStack.Screen name="ArtistInfo" component={ArtistInfo} 
-         />    
-            
+         />  
+       
+             
     </HomeStack.Navigator>
   );
 }
@@ -132,6 +138,8 @@ function SettingsStackScreen({navigation}) {
          />  
       <SettingsStack.Screen name="ArtistInfo" component={ArtistInfo} 
          />  
+
+
     </SettingsStack.Navigator>
   );
 }
@@ -155,16 +163,25 @@ export default function App({navigation}) {
         options={{
             headerShown: false
         }}/>
-        <Tab.Screen name="SongList" component={SongListScreen} 
+        <Tab.Screen name="Album List" component={SongListScreen} 
         options={{
             headerShown: false
         }}/>  
   
-        <Tab.Screen name="ArtistInfo" component={ArtistInfo} 
+        <Tab.Screen name="Artist Info" component={ArtistInfo} 
         options={{
             headerShown: false
         }}/>   
-                    
+
+        <Tab.Screen name="Give Feedback" component={FeedbackFormScreen} 
+        options={{
+            headerShown: false
+        }}/>      
+
+        <Tab.Screen name="See Feedback" component={FeedbackListScreen} 
+        options={{
+            headerShown: false
+        }}/>   
       </Tab.Navigator>
     </NavigationContainer>
   );
