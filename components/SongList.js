@@ -15,7 +15,7 @@ const SongList = () => {
       <Text>
         Enter an album name in the box below to add favorite albums to the list.
       </Text>
-       <Text> {JSON.stringify(currentValue.log)}</Text> 
+       <Text>Album List: {JSON.stringify(currentValue.log)}</Text> 
       
       <TextInput
         placeholder="Enter album name"
