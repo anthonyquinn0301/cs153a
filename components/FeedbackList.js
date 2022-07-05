@@ -17,7 +17,7 @@ const Async5 = () => {
 
     
     return (
-        <View style={{flex:1}}>
+        <View style={{marginTop:35}}>
             <Text> Here is the feedback </Text>
             <View style={{flexDirection:'row',justifyContent:'space-evenly'}}>
                 <Button

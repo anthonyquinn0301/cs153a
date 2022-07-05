@@ -10,7 +10,7 @@ const Developer = () => {
       <Text style = {styles.title} >About the developer:</Text>
       < Text style = {{
         color:'purple',
-        fontSize: 25,
+        fontSize: 20,
         
       }}> Anthony Quinn is a rising senior at Brandeis University.
       He majors in Musical Studies and minors in Spanish and Computer
@@ -28,17 +28,15 @@ const Developer = () => {
        style ={{
         borderColor:'green',
         borderWidth: 10,
-        height: 200,
-        width:300,
+        height: 150,
+        width:150,
        }}
        source = {{
         uri: 'https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Crispy-Fried-Chicken_EXPS_TOHJJ22_6445_DR%20_02_03_11b.jpg'
       }}
       />
       </View>
-      <View style = {styles.midCol}>
-        <BMI />
-      </View>
+     
       <View style = {styles.rightCol}>
       <Text style = {{
         fontSize:40,

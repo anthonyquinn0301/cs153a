@@ -25,7 +25,7 @@ const ArtistInfo = () => {
 
     return (
     <SafeAreaView>
-        <View style={{ flex: 1, padding: 24 }}>
+        <View style={{  padding: 24, }}>
 
             <TextInput
                 style={{ height: 40 }}
@@ -48,9 +48,9 @@ const ArtistInfo = () => {
                     data={data.album}
                     keyExtractor={({ id }, index) => id}
                     renderItem={({ item }) => (
-                    <View style={{flexDirection:'row',
-                        padding:15,
-                        margin:5,
+                    <View style={{flexDirection:'column',
+                        padding:10,
+                        margin:15,
                         borderWidth:2,
                         justifyContent:'space-evenly',
                         backgroundColor:'green',}}>

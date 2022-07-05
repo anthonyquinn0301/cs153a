@@ -8,7 +8,7 @@ const Async4 = () => {
     return (
         <View>
             
-            <View style={{flexDirection:'row',justifyContent:'center'}}>
+            <View style={{marginTop:35,flexDirection:'row',justifyContent:'center'}}>
                 <TouchableOpacity
                     title="send feedback"
                     style={{fontSize:10}}

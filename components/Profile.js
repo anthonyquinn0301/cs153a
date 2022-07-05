@@ -12,9 +12,9 @@ const Profile = () => {
     
 
     return (
-        <View>
+        <View style = {{marginTop:30}}>
             <Text> Profile Page for {name}/{email}</Text>
-            <View style={{flex:1, flexDirection: 'row'}}>
+            <View style={{ flexDirection: 'row'}}>
                 <Text> Enter name: </Text>
                 <TextInput
                   style={{height: 40, backgroundColor: 'white'}}
@@ -23,7 +23,7 @@ const Profile = () => {
                   defaultValue={name}
                 />
             </View>
-           <View style={{flex:1, flexDirection: 'row'}}>
+           <View style={{ flexDirection: 'row'}}>
            <Text> Enter email: </Text>
             <TextInput
               style={{height: 40, backgroundColor: 'white'}}
