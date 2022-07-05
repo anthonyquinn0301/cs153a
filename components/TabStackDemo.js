@@ -173,12 +173,12 @@ export default function App({navigation}) {
             headerShown: false
         }}/>   
 
-        <Tab.Screen name="Give Feedback" component={FeedbackFormScreen} 
+        <Tab.Screen name="Feedback" component={FeedbackFormScreen} 
         options={{
             headerShown: false
         }}/>      
 
-        <Tab.Screen name="See Feedback" component={FeedbackListScreen} 
+        <Tab.Screen name="SeeFeedBack" component={FeedbackListScreen} 
         options={{
             headerShown: false
         }}/>   
