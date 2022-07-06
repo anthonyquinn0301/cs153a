@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Text, View, TextInput, ActivityIndicator, FlatList, Button, SafeAreaView } from 'react-native';
+import { Text, View, TextInput, ActivityIndicator, FlatList, Button, SafeAreaView, TouchableOpacity,Image } from 'react-native';
 import ValueProvider from './ValueStorageContext';
 import { useValue } from './ValueStorageContext';
 const ArtistInfo = () => {
@@ -29,17 +29,30 @@ const ArtistInfo = () => {
 
             <TextInput
                 style={{ height: 40 }}
-                placeholder="Enter artist name to see their album list."
+                placeholder="Enter artist name to see their album list. Click on an album to add it to your list."
                 onChangeText={newText => setTemporaryArtistname(newText)}
                 defaultValue={temporaryArtistName}
             />
 
-            <Button
+            <TouchableOpacity
                 title="Enter"
                 onPress={() => {
                     setArtistName(temporaryArtistName)
                 }}
-            />
+            >
+                                       <Image
+       style ={{
+        borderColor:'grey',
+        borderWidth: 10,
+        height: 100,
+        width:150,
+       }}
+       source = {{
+        uri: 'https://www.safetysign.com/images/source/large-images/W5424.jpg'
+      }}
+      />
+      
+            </TouchableOpacity>
 
              {/*<Text>{JSON.stringify(data)}</Text> */}
 

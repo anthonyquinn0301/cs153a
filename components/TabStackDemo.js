@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Text, View } from 'react-native';
+import { Button, Text, TouchableOpacity, View, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -28,9 +28,9 @@ function HomeScreen({ navigation }) {
     margin:5,
     borderWidth:2,
     justifyContent:'space-evenly',
-    backgroundColor:'green',
+    backgroundColor:'blue',
     flex:1}}>
-      <Text>Home screen for {currentValue.name}   
+      <Text style = {{color:'yellow'}}>Home screen for {currentValue.name}   
              with email {currentValue.email}</Text>
              <View style={{flexDirection:'column',
                                     padding:15,
@@ -39,21 +39,75 @@ function HomeScreen({ navigation }) {
                                     justifyContent:'space-evenly',
                                     backgroundColor:'#fedcba',
                                     flex:1}}>      
-      <Button
+      <TouchableOpacity
         title="Go to Album list"
         onPress={() => navigation.navigate('SongList')}
+      >
+               <Image
+       style ={{
+        borderColor:'orange',
+        borderWidth: 10,
+        height: 100,
+        width:250,
+       }}
+       source = {{
+        uri: 'https://beehy.pe/wp-content/uploads/2020/12/Best-Albums-of-2020-beehype.jpg'
+      }}
       />
-      <Button 
+      <Text> Personal Favorite Album List</Text>
+        </TouchableOpacity>
+
+      <TouchableOpacity
       title="Go to Profile Page" 
       onPress ={() =>
-      navigation.navigate('Profile')} />
-      <Button 
-      title="Go to Developer Page" 
-      onPress = {() => navigation.navigate('Developer')}/>
+      navigation.navigate('Profile')} >
+                       <Image
+       style ={{
+        borderColor:'purple',
+        borderWidth: 10,
+        height: 100,
+        width:250,
+       }}
+       source = {{
+        uri: 'https://media.istockphoto.com/vectors/avatars-characters-vector-id521247381?k=20&m=521247381&s=612x612&w=0&h=RveYz-LZs6zL-OvtouskvXYf4VdBRU5z5UzcGCyBzC0='
+      }}
+      />
+      <Text> Profile </Text>
+      </TouchableOpacity>
 
-      <Button 
+      <TouchableOpacity
+      title="Go to Developer Page" 
+      onPress = {() => navigation.navigate('Developer')}>
+                               <Image
+       style ={{
+        borderColor:'#FFFF31',
+        borderWidth: 10,
+        height: 100,
+        width:250,
+       }}
+       source = {{
+        uri: 'https://number8.com/wp-content/uploads/2021/01/2021-software-development-salary-trends.png'
+      }}
+      />
+      <Text> Developer </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
       title="Go to Artist Info Page" 
-      onPress = {() => navigation.navigate('ArtistInfo')}/>    
+      onPress = {() => navigation.navigate('ArtistInfo')}> 
+                             <Image
+       style ={{
+        borderColor:'aqua',
+        borderWidth: 10,
+        height: 100,
+        width:250,
+       }}
+       source = {{
+        uri: 'https://sites.google.com/a/brightoncps.wa.edu.au/bcpsyr62015/_/rsrc/1447042074839/english/biography/BIOGRAPHY%20SIGN.jpg'
+      }}
+      />
+      <Text> Artist Album API </Text>
+      </TouchableOpacity>    
 
   
 </View>
@@ -163,12 +217,12 @@ export default function App({navigation}) {
         options={{
             headerShown: false
         }}/>
-        <Tab.Screen name="Album List" component={SongListScreen} 
+        <Tab.Screen name="FavoriteAlbums" component={SongListScreen} 
         options={{
             headerShown: false
         }}/>  
   
-        <Tab.Screen name="Artist Info" component={ArtistInfo} 
+        <Tab.Screen name="AlbumAPI" component={ArtistInfo} 
         options={{
             headerShown: false
         }}/>   

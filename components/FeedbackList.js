@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import {ScrollView,View,Text,TextInput,Button,FlatList} from 'react-native';
+import {ScrollView,View,Text,TextInput,Button,FlatList,SafeAreaView, TouchableOpacity,Image} from 'react-native';
 import {useValue} from './ValueStorageContext';
 import {getFeedback,clearData} from './Feedback';
 const Async5 = () => {
@@ -17,22 +17,50 @@ const Async5 = () => {
 
     
     return (
+        <SafeAreaView>
         <View style={{marginTop:35}}>
             <Text> Here is the feedback </Text>
             <View style={{flexDirection:'row',justifyContent:'space-evenly'}}>
-                <Button
+                <TouchableOpacity
                 title="get feedback"
                 onPress = {() =>
                     getFeedback(saveFeedback)} 
-                />
-                <Button
+                >
+                                           <Image
+       style ={{
+        borderColor:'blue',
+        borderWidth: 10,
+        height: 100,
+        width:150,
+       }}
+       source = {{
+        uri: 'https://mirro.io/wp-content/uploads/2021/09/1-feedback-descriptive.jpg'
+      }}
+      />
+      <Text> Get Feedback </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
                     title="clear"
                     onPress = {() => 
                             {clearData();
                             getFeedback(saveFeedback)
                             }
                         }
-                />
+                >
+
+<Image
+       style ={{
+        borderColor:'black',
+        borderWidth: 10,
+        height: 100,
+        width:200,
+       }}
+       source = {{
+        uri: 'https://mma.prnewswire.com/media/1527786/CLEAR_company_Logo.jpg?p=facebook'
+      }}
+      />
+      <Text> Clear </Text>
+                </TouchableOpacity>
             </View>
 
             <FlatList
@@ -50,6 +78,7 @@ const Async5 = () => {
             
 
         </View> 
+        </SafeAreaView>
     )
 }
 

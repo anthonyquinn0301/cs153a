@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Text, TextInput, View } from 'react-native';
+import { Button, Text, TextInput, View,ScrollView,SafeAreaView, TouchableOpacity, Image, } from 'react-native';
 import {useValue} from './ValueStorageContext';
 
 const SongList = () => {
@@ -8,7 +8,9 @@ const SongList = () => {
   
 
   return (
-    <View style={{padding: 10}}>
+    <ScrollView>
+    <SafeAreaView>
+    <View style={{padding: 10, justifyContent:'flex-start',flex:1}}>
       <Text style={{fontSize:20,fontWeight:'bold'}}>
          Album List:
       </Text>
@@ -25,19 +27,33 @@ const SongList = () => {
       
       />
                
-                <Button
+                <TouchableOpacity
                 title='add'
                 color = '#FAD4D4'
                 onPress = {() => {
                     setCurrentValue({ 
                         log:(currentValue.log || []).concat([song])})
                     }}
-            />              
+            > 
+                                   <Image
+       style ={{
+        borderColor:'pink',
+        borderWidth: 10,
+        height: 75,
+        width:75,
+       }}
+       source = {{
+        uri: 'https://www.clipartmax.com/png/middle/2-28449_large-add-symbol-clipart-plus-sign-transparent-background.png'
+      }}
+      />
+      <Text> Click to add to list </Text>
+            </TouchableOpacity>              
               
        
        
     </View>
-    
+    </SafeAreaView>
+    </ScrollView>
   );
 }
 
