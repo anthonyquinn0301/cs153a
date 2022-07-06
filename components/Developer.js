@@ -42,7 +42,7 @@ const Developer = () => {
         fontSize:40,
         fontWeight:'bold',
         color:'yellow',
-      }} >Thanks for scrolling!</Text>
+      }} >Thanks for viewing!</Text>
      
       </View>
     </View>
